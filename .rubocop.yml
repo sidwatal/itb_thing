@@ -6,4 +6,13 @@ require:
 
 inherit_from:
   - .rubocop_airbnb.yml
-  - .rubocop_todo.yml
+
+AllCops:
+  NewCops: enable
+  Exclude:
+    - 'db/**/*'
+    - 'config/**/*'
+    - 'bin/**/*'
+    - 'vendor/**/*'
+    - 'Gemfile'
+    - 'Gemfile.lock'
