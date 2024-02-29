@@ -1,0 +1,9 @@
+require:
+  - rubocop-rails
+  - rubocop-rspec
+  - rubocop-performance
+  - rubocop-airbnb
+
+inherit_from:
+  - .rubocop_airbnb.yml
+  - .rubocop_todo.yml
