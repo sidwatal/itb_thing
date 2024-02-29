@@ -12,6 +12,8 @@ RSpec.describe Pilot, type: :model do
   end
 
   describe 'validations' do
+    subject { build(:pilot) }
+
     it { is_expected.to validate_presence_of(:name) }
     it { is_expected.to validate_uniqueness_of(:name) }
     it { is_expected.to validate_presence_of(:debug_name) }
