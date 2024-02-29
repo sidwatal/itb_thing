@@ -1,2 +1,0 @@
-class Mech < ApplicationRecord
-end
