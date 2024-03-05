@@ -1,0 +1,2 @@
+class Loop < ApplicationRecord
+end
