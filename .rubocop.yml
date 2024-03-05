@@ -17,3 +17,6 @@ AllCops:
     - 'Gemfile.lock'
     - 'Gemfile'
     - 'vendor/**/*'
+
+Layout/LineLength:
+  Max: 120
