@@ -46,6 +46,9 @@ gem 'bootsnap', require: false
 # Static type checker for Ruby [https://sorbet.org]
 gem 'sorbet-static-and-runtime'
 
+# State machine
+gem 'aasm'
+
 group :development, :test do
   gem 'factory_bot_rails'
   gem 'faker'

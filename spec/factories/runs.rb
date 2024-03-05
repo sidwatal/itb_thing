@@ -1,6 +1,9 @@
 FactoryBot.define do
   factory :run do
-    sequence(:number) { |n| n }
     loop
+
+    sequence(:number) { |n| n }
+    status { 'pending' }
+    result { 'unknown' }
   end
 end

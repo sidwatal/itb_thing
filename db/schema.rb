@@ -37,8 +37,8 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_05_025202) do
   create_table "runs", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
     t.integer "number", default: 0, null: false
     t.uuid "loop_id", null: false
-    t.integer "status", default: 0, null: false
-    t.integer "result", default: 0, null: false
+    t.string "status", null: false
+    t.string "result", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["loop_id"], name: "index_runs_on_loop_id"

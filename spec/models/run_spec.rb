@@ -17,5 +17,8 @@ RSpec.describe Run, type: :model do
         end
       end
     end
+
+    it { is_expected.to have_db_column(:status).of_type(:string) }
+    it { is_expected.to have_db_column(:result).of_type(:string) }
   end
 end
