@@ -1,3 +1,5 @@
+# typed: true
+
 class Loop < ApplicationRecord
   # validations
   validates :profile_name, presence: true, uniqueness: true
