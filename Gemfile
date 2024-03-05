@@ -43,12 +43,6 @@ gem 'tzinfo-data', platforms: %i[ windows jruby ]
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', require: false
 
-# Static type checker for Ruby [https://sorbet.org]
-gem 'sorbet-static-and-runtime'
-
-# State machine
-gem 'aasm'
-
 group :development, :test do
   gem 'factory_bot_rails'
   gem 'faker'
@@ -59,9 +53,6 @@ group :development, :test do
   gem 'rubocop-rails', require: false
   gem 'rubocop-rspec', require: false
   gem 'shoulda-matchers', '~> 6.0'
-
-  # Generate RBI files for Sorbet [https://sorbet.org]
-  gem 'tapioca', require: false
 end
 
 group :development do
