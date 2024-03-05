@@ -7,6 +7,9 @@ RSpec.describe Loop, type: :model do
 
   describe 'associations' do
     it { is_expected.to belong_to(:starting_pilot).class_name('Pilot') }
+    it { is_expected.to have_many(:runs) }
+    it { is_expected.to have_many(:run_pilots).through(:runs) }
+    it { is_expected.to have_many(:pilots).through(:run_pilots) }
   end
 
   describe 'validations' do

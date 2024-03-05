@@ -18,7 +18,13 @@ RSpec.describe Run, type: :model do
       end
     end
 
-    it { is_expected.to have_db_column(:status).of_type(:string) }
-    it { is_expected.to have_db_column(:result).of_type(:string) }
+    it { is_expected.to have_db_column(:status).of_type(:integer) }
+    it { is_expected.to have_db_column(:result).of_type(:integer) }
+  end
+
+  describe 'associations' do
+    it { is_expected.to belong_to(:loop) }
+    it { is_expected.to have_many(:run_pilots) }
+    it { is_expected.to have_many(:pilots).through(:run_pilots) }
   end
 end
