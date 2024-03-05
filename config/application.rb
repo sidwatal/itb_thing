@@ -25,6 +25,7 @@ module ItbThing
     # config.eager_load_paths << Rails.root.join("extras")
 
     config.generators do |generate|
+      generate.test_framework :rspec
       generate.orm :active_record, primary_key_type: :uuid
     end
   end
