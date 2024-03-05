@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_03_05_025202) do
+ActiveRecord::Schema[7.1].define(version: 2024_03_05_040209) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pgcrypto"
   enable_extension "plpgsql"
@@ -34,6 +34,16 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_05_025202) do
     t.index ["name"], name: "index_pilots_on_name", unique: true
   end
 
+  create_table "run_pilots", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+    t.uuid "run_id", null: false
+    t.uuid "pilot_id", null: false
+    t.string "status", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["pilot_id"], name: "index_run_pilots_on_pilot_id"
+    t.index ["run_id"], name: "index_run_pilots_on_run_id"
+  end
+
   create_table "runs", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
     t.integer "number", default: 0, null: false
     t.uuid "loop_id", null: false
@@ -45,5 +55,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_05_025202) do
   end
 
   add_foreign_key "loops", "pilots", column: "starting_pilot_id"
+  add_foreign_key "run_pilots", "pilots"
+  add_foreign_key "run_pilots", "runs"
   add_foreign_key "runs", "loops"
 end

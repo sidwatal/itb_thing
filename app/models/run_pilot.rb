@@ -1,0 +1,2 @@
+class RunPilot < ApplicationRecord
+end
